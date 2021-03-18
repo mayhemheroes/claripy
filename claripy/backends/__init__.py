@@ -155,7 +155,7 @@ class Backend:
                 args_list = ast_queue[-1]
 
                 if args_list:
-                    ast = args_list.pop(0)
+                    ast = args_list.pop()
 
                     if type(ast) in {bool, int, str, float} or not isinstance(ast, Base):
                         converted = self._convert(ast)
@@ -176,7 +176,7 @@ class Backend:
                     if ast.op in self._op_expr:
                         ast_queue.append(None)
                     else:
-                        ast_queue.append(list(ast.args))
+                        ast_queue.append(reversed(list(ast.args)))
 
                 else:
                     ast_queue.pop()
