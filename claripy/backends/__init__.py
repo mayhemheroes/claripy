@@ -176,7 +176,9 @@ class Backend:
                     if ast.op in self._op_expr:
                         ast_queue.append(None)
                     else:
-                        ast_queue.append(reversed(list(ast.args)))
+                        a = list(ast.args)
+                        a.reverse()
+                        ast_queue.append(a)
 
                 else:
                     ast_queue.pop()
