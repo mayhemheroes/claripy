@@ -891,6 +891,7 @@ class BackendZ3(Backend):
         if len(extra_constraints) > 0:
             solver.pop()
 
+        assert min(vals) >= lo, "uh..."
         return min(vals)
 
     @condom
@@ -961,6 +962,7 @@ class BackendZ3(Backend):
         if len(extra_constraints) > 0:
             solver.pop()
 
+        assert max(vals) <= hi, "uh..."
         return max(vals)
 
     def _simplify(self, e): #pylint:disable=W0613,R0201
