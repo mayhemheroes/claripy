@@ -1,7 +1,6 @@
 project: cle
-image: ghcr.io/capuanob/cle-fuzz
-target: loader-fuzz
+target: solver-fuzz
 
 cmds:
-  - cmd: /fuzz_loader.py
+  - cmd: /fuzz_bvv.py
     libfuzzer: true

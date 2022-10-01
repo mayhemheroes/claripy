@@ -1,7 +1,7 @@
 # Build Stage
 FROM fuzzers/atheris:2.0.7-python3.9
 
-ADD ./mayhem/fuzz_loader.py /fuzz_loader.py
-RUN pip install cle
+ADD ./mayhem/fuzz_bvv.py /fuzz_bvv.py
+RUN pip install claripy
 
-CMD ["/fuzz_loader.py"]
+CMD ["/fuzz_bvv.py"]
