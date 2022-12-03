@@ -1,0 +1,6 @@
+project: cle
+target: solver-fuzz
+
+cmds:
+  - cmd: /fuzz_bvv.py
+    libfuzzer: true
